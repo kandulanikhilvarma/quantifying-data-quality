@@ -390,7 +390,6 @@ This project is part of a broader portfolio of data work — each one demonstrat
 ## 👤 Author
 
 **Nikhilvarma Kandula**  
-M.Sc. Big Data & Business Analytics · FOM University of Applied Sciences, Essen  
 Data Analyst & Engineer · 1.5+ years Fintech · Peer-reviewed publication · Google Certified
 
 <div align="center">
