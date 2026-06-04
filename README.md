@@ -17,8 +17,6 @@
 
 <br/>
 
-> **Module:** Quantitative Data Analytics · FOM Hochschule Essen · Summer Semester 2026  
-> **Team:** John Gomez · Atharva Satam · Prathamesh Patil · **Nikhilvarma Kandula**  
 > **Dataset:** UCI Air Quality · 9,357 hourly observations · March 2004 – February 2005
 
 </div>
