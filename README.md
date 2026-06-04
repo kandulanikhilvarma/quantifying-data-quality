@@ -16,8 +16,7 @@
 [![Status](https://img.shields.io/badge/Status-Published-f59e0b?style=for-the-badge)]()
 
 <br/>
-
-> **Dataset:** UCI Air Quality · 9,357 hourly observations · March 2004 – February 2005
+**Dataset:** UCI Air Quality · 9,357 hourly observations · March 2004 – February 2005
 
 </div>
 
