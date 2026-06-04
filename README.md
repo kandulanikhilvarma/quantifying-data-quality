@@ -11,7 +11,6 @@
 [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
 [![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org)
 [![Kaggle](https://img.shields.io/badge/Kaggle-Open_Notebook-20BEFF?style=for-the-badge&logo=kaggle&logoColor=white)](https://www.kaggle.com/nikhilvarmakandula)
-[![FOM](https://img.shields.io/badge/FOM_University-Essen,_Germany-1a237e?style=for-the-badge&logo=academia&logoColor=white)](https://fom.de)
 [![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](LICENSE)
 [![Status](https://img.shields.io/badge/Status-Published-f59e0b?style=for-the-badge)]()
 
