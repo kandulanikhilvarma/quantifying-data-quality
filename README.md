@@ -30,6 +30,7 @@
 - [🧱 Framework](#-the-framework--four-dimensions-one-score)
 - [🔬 Hypotheses & Results](#-hypotheses--results)
 - [📈 Key Findings](#-key-analytical-findings)
+- [🖼️ Visualizations](#-complete-analysis-visualizations)
 - [🛠️ Tech Stack](#-tech-stack)
 - [🗂️ Repository Structure](#-repository-structure)
 - [▶️ Getting Started](#-get-started-in-3-steps)
@@ -248,7 +249,7 @@ Four hypotheses were pre-registered and tested with appropriate statistical meth
 
 ### Sensor Cross-Correlations
 
-The correlation structure (see `fig_04_correlation.png`) reveals three distinct signal clusters — critical for understanding what these sensors are measuring:
+The correlation structure (see `fig_04_correlation.png` below) reveals three distinct signal clusters — critical for understanding what these sensors are measuring:
 
 | Pair | r | Interpretation |
 |------|---|---|
@@ -278,30 +279,102 @@ This number is **not** a failure of the framework — it is **confirmation that 
 ---
 
 <!-- ═══════════════════════════════════════════════════════════════
-     FIGURES & VISUAL ASSETS
+     COMPLETE ANALYSIS VISUALIZATIONS
 ═══════════════════════════════════════════════════════════════ -->
 
-## 🖼️ Analysis Figures — Complete Visual Asset Map
+## 🖼️ Complete Analysis Visualizations
 
 All figures are generated reproducibly within the notebook. Each one answers a specific analytical question and is saved at **300 DPI** for publication quality.
 
-### Figure Reference Table
+### Core Result — DQI Scores
 
-| # | Figure | What It Shows | Purpose | Alt Text |
-|---|--------|--------------|---------|----------|
-| **01** | `fig_01_missing_data.png` | Missing values by column + temporal heatmap | Identify where/when data is absent | Heatmap showing missing data patterns across 12 variables over 12 months |
-| **02** | `fig_02_dq_scores.png` | Four dimension scores plotted against 0.7 threshold | Core result visualization | Bar chart comparing four data quality dimension scores to acceptability threshold |
-| **03** | `fig_03_distributions.png` | Completeness distribution + normalised boxplots per variable | Variability in data quality across columns | Histogram of completeness scores and boxplots for all 12 variables |
-| **04** | `fig_04_correlation.png` | Pearson correlation matrix (lower triangle) | Sensor cross-signal relationships | Lower triangular correlation heatmap showing relationships between all variables |
-| **05** | `fig_05_h1.png` | Completeness vs usability scatter (r = 0.998) | Validate H₁ hypothesis | Scatter plot with trend line showing near-perfect correlation between completeness and usability |
-| **06** | `fig_06_h2.png` | Error rate distributions (high vs low consistency) | Test H₂ hypothesis | Side-by-side density plots comparing error rates for high and low consistency groups |
-| **07** | `fig_07_h4_drift.png` | KS drift test — CDF + density overlay for NOx | Visualize temporal drift (H₄) | Cumulative distribution plots showing seasonal distribution shift in NOx measurements |
-| **08** | `fig_08_dqi.png` | Composite DQI distribution + 5-fold cross-validation bars | Model stability assessment | Histogram of DQI scores with overlaid cross-validation confidence intervals |
-| **09** | `fig_09_blue.png` | BLUE assumption checks — residuals, normality, homoscedasticity | Regression diagnostics | 2×2 grid: residuals plot, Q-Q plot, scale-location, and residuals vs fitted |
-| **10** | `fig_10_regression.png` | Actual vs predicted sensor error + 5-fold CV results | Regression performance | Scatter plot of actual vs predicted values with cross-validation fold indicators |
-| **11** | `fig_11_validity.png` | Discriminant validity heatmap — dimension independence | Confirm dimensions are independent | Correlation matrix heatmap showing low inter-dimension correlations |
+![Data Quality Index Visualization](fig_02_dq_scores.png "Four dimension data quality scores plotted against the 0.7 acceptability threshold—the core result of the analysis")
 
-### Visual Asset Connections
+*Figure 2: Core Result - Four dimension DQI scores vs threshold line. Three dimensions exceed the 0.70 acceptability threshold (Completeness, Consistency, Accuracy). Timeliness falls short.*
+
+---
+
+### Missing Data Analysis
+
+![Missing Data Heatmap](fig_01_missing_data.png "Temporal heatmap showing missing values by column and month—reveals where and when data is absent")
+
+*Figure 1: Missing Data Analysis - Shows temporal distribution of missingness. Most values present; NMHC column had >90% missingness (dropped during cleaning).*
+
+---
+
+### Distribution & Completeness
+
+![Completeness Distributions](fig_03_distributions.png "Histogram of completeness scores across all variables and boxplots showing data distribution")
+
+*Figure 3: Completeness Distributions - Histogram shows most variables have high completeness. Boxplots reveal outliers in specific sensors (PT08 series).*
+
+---
+
+### Sensor Correlations
+
+![Correlation Matrix](fig_04_correlation.png "Pearson correlation matrix (lower triangle) showing relationships between all 12 variables")
+
+*Figure 4: Sensor Cross-Correlations - Lower triangular correlation matrix. Reveals three signal clusters: reference sensors, proxy sensors, and environmental variables. Note the negative correlation for PT08.S3(NOx).*
+
+---
+
+### H₁: Completeness & Usability (CONFIRMED)
+
+![H1 Results](fig_05_h1.png "Scatter plot showing near-perfect correlation (r=0.998) between completeness and data usability")
+
+*Figure 5: Hypothesis H₁ - Completeness vs Usability. Scatter plot with trend line showing r = 0.998 (p < 0.001). The framework's completeness dimension is a powerful proxy for practical usability.*
+
+---
+
+### H₂: Consistency & Error Rates (NOT CONFIRMED)
+
+![H2 Results](fig_06_h2.png "Density plots comparing error rates between high-consistency and low-consistency data groups")
+
+*Figure 6: Hypothesis H₂ - Consistency vs Error Rates. Side-by-side density plots show no significant difference in error rates between high- and low-consistency groups (p = 0.517).*
+
+---
+
+### H₄: Temporal Drift Detection
+
+![Drift Analysis](fig_07_h4_drift.png "Cumulative distribution plots showing significant distribution shifts across recording period for NOx measurements")
+
+*Figure 7: Hypothesis H₄ - Temporal Drift. CDF overlay for NOx shows significant distribution shift from early to late period. KS test: p < 0.05 for 7/8 columns.*
+
+---
+
+### Composite DQI Distribution
+
+![DQI Distribution](fig_08_dqi.png "Histogram of composite DQI scores across 5-fold cross-validation with confidence intervals")
+
+*Figure 8: Composite DQI Distribution - Shows stability of DQI scores across 5-fold cross-validation. Narrow confidence intervals indicate robust scoring.*
+
+---
+
+### Regression Diagnostics (BLUE Assumptions)
+
+![BLUE Assumptions](fig_09_blue.png "2x2 grid showing residuals plot, Q-Q normality plot, scale-location, and residuals vs fitted diagnostics")
+
+*Figure 9: BLUE Assumption Checks - Four diagnostic plots: (1) Residuals plot, (2) Q-Q normality, (3) Scale-location, (4) Residuals vs fitted. All assumptions reasonably satisfied.*
+
+---
+
+### Regression Performance
+
+![Regression Results](fig_10_regression.png "Scatter plot of actual vs predicted sensor error with 5-fold cross-validation results overlay")
+
+*Figure 10: Regression Performance - Actual vs predicted sensor error (R² = 0.013). Confirms that DQ scores alone weakly predict measurement error—data quality and measurement quality are independent constructs.*
+
+---
+
+### Discriminant Validity
+
+![Validity Heatmap](fig_11_validity.png "Correlation heatmap between the four DQI dimensions showing low inter-dimension correlations")
+
+*Figure 11: Discriminant Validity - Heatmap of inter-dimension correlations. Low correlations confirm each dimension measures unique information (not redundant).*
+
+---
+
+### Visual Asset Map
 
 ```
 ┌─────────────────────────────────────────────────────────────────┐
@@ -325,30 +398,18 @@ All figures are generated reproducibly within the notebook. Each one answers a s
 │ │ Hypothesis Testing Section                               │  │
 │ │ └─→ fig_05_h1.png (H₁ results)                          │  │
 │ │ └─→ fig_06_h2.png (H₂ results)                          │  │
+│ │ └─→ fig_08_dqi.png (DQI stability)                      │  │
 │ └──────────────────────────────────────────────────────────┘  │
 │                                                                 │
 │ ┌──────────────────────────────────────────────────────────┐  │
-│ │ Notebook (Data_Quality_Analysis.ipynb) — Full Analysis  │  │
-│ │ └─→ Generates all 11 figures at 300 DPI                 │  │
-│ │ └─→ 54 cells: EDA → Scoring → Hypotheses → Regression   │  │
+│ │ Regression & Validity Section                            │  │
+│ │ └─→ fig_09_blue.png (diagnostic checks)                 │  │
+│ │ └─→ fig_10_regression.png (performance)                 │  │
+│ │ └─→ fig_11_validity.png (independence)                  │  │
 │ └──────────────────────────────────────────────────────────┘  │
 │                                                                 │
 └─────────────────────────────────────────────────────────────────┘
 ```
-
-<details>
-<summary><b>🖼️ Where to Find Each Figure</b></summary>
-
-All figures are stored in the repository root:
-
-- **Exploratory figures:** `fig_01_missing_data.png`, `fig_03_distributions.png`, `fig_04_correlation.png`
-- **Core results:** `fig_02_dq_scores.png`, `fig_08_dqi.png`
-- **Hypothesis testing:** `fig_05_h1.png`, `fig_06_h2.png`, `fig_07_h4_drift.png`
-- **Statistical validation:** `fig_09_blue.png`, `fig_10_regression.png`, `fig_11_validity.png`
-
-Run the notebook to regenerate all figures in your environment.
-
-</details>
 
 ---
 
