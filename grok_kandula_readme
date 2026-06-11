@@ -1,0 +1,33 @@
+<div align="center">
+  <img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:1e3a8a,50:3b82f6,100:60a5fa&height=240&section=header&text=Quantifying%20Data%20Quality&fontSize=48&fontColor=ffffff&fontAlignY=38&desc=Statistical%20Framework%20for%20Scoring%20%26%20Monitoring%20Scientific%20Datasets&descAlignY=58&descSize=18&descColor=e0f2fe" alt="Project Banner" />
+</div>
+
+<div align="center">
+
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org)
+[![Jupyter](https://img.shields.io/badge/Jupyter-Notebook-F37626?style=for-the-badge&logo=jupyter&logoColor=white)](https://jupyter.org)
+[![License](https://img.shields.io/badge/License-MIT-22c55e?style=for-the-badge)](LICENSE)
+[![Stars](https://img.shields.io/github/stars/kandulanikhilvarma/quantifying-data-quality?style=for-the-badge&color=eab308)](https://github.com/kandulanikhilvarma/quantifying-data-quality/stargazers)
+
+**UCI Air Quality Dataset** — 9,357 hourly observations (2004–2005)
+
+</div>
+
+---
+
+## 📋 Table of Contents
+- [Data Quality Index — At a Glance](#-data-quality-index--at-a-glance)
+- [The Problem](#-the-problem)
+- [The Framework](#-the-framework--four-dimensions-one-score)
+- [Dataset & Pipeline](#-dataset--cleaning-pipeline)
+- [Hypotheses & Results](#-hypotheses--results)
+- [Key Findings & Visualizations](#-key-findings--visualizations)
+- [Installation & Usage](#-installation--usage)
+- [Project Structure](#-project-structure)
+- [Future Work](#-future-work--roadmap)
+- [Contributing](#-contributing)
+- [License & Acknowledgments](#-license--acknowledgments)
+
+---
+
+## 📊 Data Quality Index — At a Glance
