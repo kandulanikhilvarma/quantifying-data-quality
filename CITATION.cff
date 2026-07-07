@@ -1,0 +1,18 @@
+cff-version: 1.2.0
+message: "If you use this work, please cite it as below."
+title: "Quantifying Data Quality: A Statistical Framework for Scoring and Monitoring Scientific Datasets"
+authors:
+  - family-names: Kandula
+    given-names: Nikhilvarma
+    email: kandulanikhilvarma@gmail.com
+    website: "https://kandula.studio"
+type: software
+url: "https://github.com/kandulanikhilvarma/quantifying-data-quality"
+repository-code: "https://github.com/kandulanikhilvarma/quantifying-data-quality"
+license: MIT
+keywords:
+  - data-quality
+  - statistics
+  - nlp
+  - scikit-learn
+  - python
