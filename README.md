@@ -728,6 +728,11 @@ Data Analyst and Engineer | 1.5+ years Fintech | Peer-reviewed publication | Goo
 
 **License:** MIT — [View LICENSE](LICENSE)
 
+**Data attribution:** The validation dataset is UCI Air Quality (De Vito et al.,
+2016), distributed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+— source: https://doi.org/10.24432/C59K5F. The dataset remains under its original
+license; the framework code and documentation in this repository are MIT.
+
 **How to cite this work:**
 
 ```bibtex
