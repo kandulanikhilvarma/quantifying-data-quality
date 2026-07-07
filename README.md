@@ -104,7 +104,7 @@ Scientific datasets drive critical decisions in healthcare, climate science, and
 
 ```mermaid
 flowchart TB
-    A["UCI Air Quality<br/>9,358 × 15"] --> B["Ingest & sentinel fix<br/>-200 → NaN"]
+    A["UCI Air Quality<br/>9,358 × 15"] --> B["Ingest and sentinel fix<br/>-200 → NaN"]
     B --> C["Clean<br/>drop NMHC(GT)<br/>9,357 × 12"]
     C --> D1["Completeness"]
     C --> D2["Consistency"]
@@ -116,7 +116,7 @@ flowchart TB
     D3 --> F
     D4 --> F
     F --> G["K-Means on quality metrics"]
-    G --> H["Report & figures"]
+    G --> H["Report and figures"]
 ```
 
 - **Ingest & clean** — sentinel `-200` values are coerced to NaN and the >90%-missing NMHC(GT) column is dropped.
