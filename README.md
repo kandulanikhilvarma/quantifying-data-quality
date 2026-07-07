@@ -100,6 +100,29 @@ Scientific datasets drive critical decisions in healthcare, climate science, and
      FRAMEWORK
 ═══════════════════════════════════════════════════════════════ -->
 
+## Architecture
+
+```mermaid
+flowchart TB
+    A["UCI Air Quality<br/>9,358 × 15"] --> B["Ingest & sentinel fix<br/>-200 → NaN"]
+    B --> C["Clean<br/>drop NMHC(GT)<br/>9,357 × 12"]
+    C --> D1["Completeness"]
+    C --> D2["Consistency"]
+    C --> D3["Accuracy"]
+    C --> D4["Timeliness"]
+    C --> E["NER confidence<br/>spaCy · 88.4% precision"]
+    D1 --> F["Composite DQ Index"]
+    D2 --> F
+    D3 --> F
+    D4 --> F
+    F --> G["K-Means on quality metrics"]
+    G --> H["Report & figures"]
+```
+
+- **Ingest & clean** — sentinel `-200` values are coerced to NaN and the >90%-missing NMHC(GT) column is dropped.
+- **Four-dimension scoring** — completeness, consistency, accuracy, and timeliness each normalise to [0–1].
+- **Composite** — equal-weighted into the Data Quality Index, then K-Means clusters the quality metrics.
+
 ## Framework — Four Dimensions, One Score
 
 Each dimension is grounded in published measurement theory and produces a normalised [0–1] score. Equal weighting produces the composite **Data Quality Index (DQI)**.
@@ -727,6 +750,11 @@ Data Analyst and Engineer | 1.5+ years Fintech | Peer-reviewed publication | Goo
 ## License and Citation
 
 **License:** MIT — [View LICENSE](LICENSE)
+
+**Data attribution:** The validation dataset is UCI Air Quality (De Vito et al.,
+2016), distributed under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/)
+— source: https://doi.org/10.24432/C59K5F. The dataset remains under its original
+license; the framework code and documentation in this repository are MIT.
 
 **How to cite this work:**
 
